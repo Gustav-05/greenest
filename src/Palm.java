@@ -1,0 +1,26 @@
+class Palm extends Plant {
+
+    public Palm(String name, double height) {
+        super(name, height);
+    }
+
+    @Override
+    public Liquid getLiquid() {
+        return Liquid.TAP_WATER;
+    }
+
+    @Override
+    public double calculateLiquid() {
+        return 0.5 * getHeight();
+    }
+
+    @Override
+    public void printLiquid() {
+        System.out.println(getName() + " behöver " + calculateLiquid() + " liter per dag");
+
+    }
+}
+
+
+
+
