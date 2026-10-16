@@ -1,3 +1,4 @@
+// Plant implementerar interfacet Waterable
 public abstract class Plant implements Waterable {
 
     private String name;

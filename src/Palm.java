@@ -1,3 +1,4 @@
+// Palm ärver egenskaper och metoder från Plant
 class Palm extends Plant {
 
     public Palm(String name, double height) {

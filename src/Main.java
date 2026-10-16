@@ -7,19 +7,11 @@ class Main {
         Scanner scanner = new Scanner(System.in);
 
         showMeny();
-        try{
-            String user = scanner.nextLine();
-            Plant[] plantNames = getPlant();
 
-            showPlant(plantNames, user);
+        String user = scanner.nextLine().trim();
+        Plant[] plantNames = getPlant();
 
-        } catch (Exception e) {
-            System.out.println("Du skrev inte in något av namnen");
-        }
-
-
-
-
+        showPlant(plantNames, user);
     }
 
 
@@ -38,6 +30,7 @@ class Main {
 
     public static Plant[] getPlant() {
 
+        // Polymorfism: plantNames är en Plant, men varje objekt kan vara exempelvis en Palm, eller Cactus
         Plant[] plantNames = {
                 new Palm("Laura", 5.0),
                 new Cactus("Igge", 0.20),
@@ -51,9 +44,16 @@ class Main {
 
 
     public static void showPlant(Plant[] plantNames, String user) {
+
+        boolean found = false;
+
+        //Polymorfism: varje växt använder sin egen implementation av printLiquid()
         for (int i = 0; i < plantNames.length; i += 1) {
 
-            if (user.equals(plantNames[i].getName())) {
+            if (user.equalsIgnoreCase(plantNames[i].getName())) {
+
+                found = true;
+
                 System.out.println("Växt: " + plantNames[i].getName());
                 System.out.println("Höjd: " + plantNames[i].getHeight() + " meter");
                 System.out.println("Vätska: " + plantNames[i].getLiquid());
@@ -61,6 +61,10 @@ class Main {
                 plantNames[i].printLiquid();
             }
 
+        }
+
+        if (!found) {
+            System.out.println("Du skrev inte något av namnen");
         }
 
     }
