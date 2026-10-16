@@ -16,7 +16,7 @@ class Carnivorous extends Plant {
 
     @Override
     public void printLiquid() {
-        System.out.println(getName() + " behöver " + calculateLiquid() + " liter per dag");
+        System.out.println(getName() + " behöver " + calculateLiquid() +  " " + getLiquid() + " liter per dag");
     }
 
 }

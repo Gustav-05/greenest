@@ -1,4 +1,4 @@
-public abstract class Plant {
+public abstract class Plant implements Waterable {
 
     private String name;
     private double height;
@@ -18,9 +18,7 @@ public abstract class Plant {
 
     public abstract Liquid getLiquid();
 
-    public abstract double calculateLiquid();
 
-    public abstract void printLiquid();
 
 }
 

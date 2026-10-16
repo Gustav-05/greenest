@@ -40,7 +40,7 @@ class Main {
 
         Plant[] plantNames = {
                 new Palm("Laura", 5.0),
-                new Cactus("Igge", 20),
+                new Cactus("Igge", 0.20),
                 new Carnivorous("Meatloaf", 0.7),
                 new Palm("Olof", 1.0)
         };
@@ -57,6 +57,7 @@ class Main {
                 System.out.println("Växt: " + plantNames[i].getName());
                 System.out.println("Höjd: " + plantNames[i].getHeight() + " meter");
                 System.out.println("Vätska: " + plantNames[i].getLiquid());
+
                 plantNames[i].printLiquid();
             }
 

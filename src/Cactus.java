@@ -16,7 +16,7 @@ class Cactus extends Plant {
 
     @Override
     public void printLiquid() {
-        System.out.println(getName() + " behöver " + calculateLiquid() + " cl per dag");
+        System.out.println(getName() + " behöver " + calculateLiquid() +  " " + getLiquid() + " cl per dag");
     }
 
 
