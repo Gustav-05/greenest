@@ -18,8 +18,8 @@ class Palm extends Plant {
     }
 
     @Override
-    public void printLiquid() {
-        System.out.println(getName() + " behöver " + calculateLiquid() +  " " + getLiquid() + " liter per dag");
+    public String printLiquid() {
+        return super.printLiquid() + " liter per dag";
 
     }
 }

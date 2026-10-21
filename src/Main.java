@@ -51,17 +51,16 @@ class Main {
         boolean found = false;
 
         //Polymorfism: varje växt använder sin egen implementation av printLiquid()
-        for (int i = 0; i < plantNames.length; i += 1) {
+        for (Plant plant : plantNames) {
 
-            if (user.equalsIgnoreCase(plantNames[i].getName())) {
+            if (user.equalsIgnoreCase(plant.getName())) {
 
                 found = true;
 
-                System.out.println("Växt: " + plantNames[i].getName());
-                System.out.println("Höjd: " + plantNames[i].getHeight() + " meter");
-                System.out.println("Vätska: " + plantNames[i].getLiquid());
-
-                plantNames[i].printLiquid();
+                System.out.println("Växt: " + plant.getName());
+                System.out.println("Höjd: " + plant.getHeight() + " meter");
+                System.out.println("Vätska: " + plant.getLiquid());
+                System.out.println(plant.printLiquid());
             }
 
         }

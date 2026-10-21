@@ -23,6 +23,11 @@ public abstract class Plant implements LiquidAble {
         return height;
     }
 
+    public String printLiquid() {
+        return getName() +  " behöver " + calculateLiquid() +  " " + getLiquid();
+    }
+
     public abstract Liquid getLiquid();
+
 
 }
