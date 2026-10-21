@@ -1,5 +1,7 @@
 class Cactus extends Plant {
 
+    private static final double SPARKLING_WATER_PER_DAY = 2;
+
     public Cactus(String name, double height) {
         super(name, height);
     }
@@ -11,7 +13,7 @@ class Cactus extends Plant {
 
     @Override
     public double calculateLiquid() {
-        return 2;
+        return SPARKLING_WATER_PER_DAY;
     }
 
     @Override

@@ -1,5 +1,8 @@
 class Carnivorous extends Plant {
 
+    private static final double PROTEIN_SHAKE_PER_METER = 0.2;
+    private static final double PROTEIN_SHAKE_BASIC_LEVEL = 0.1;
+
     public Carnivorous(String name, double height) {
         super(name, height);
     }
@@ -11,7 +14,7 @@ class Carnivorous extends Plant {
 
     @Override
     public double calculateLiquid() {
-        return 0.1 + (0.2 * getHeight());
+        return PROTEIN_SHAKE_BASIC_LEVEL + (PROTEIN_SHAKE_PER_METER * getHeight());
     }
 
     @Override

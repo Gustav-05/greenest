@@ -4,16 +4,19 @@ class Main {
 
 
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
+        while (true) {
+            showMeny();
 
-        showMeny();
+            String user = scanner.nextLine().trim();
+            Plant[] plantNames = getPlant();
 
-        String user = scanner.nextLine().trim();
-        Plant[] plantNames = getPlant();
-
-        showPlant(plantNames, user);
+            if (showPlant(plantNames, user)) {
+                break;
+            }
+        }
     }
-
 
     public static void showMeny() {
 
@@ -32,10 +35,10 @@ class Main {
 
         // Polymorfism: plantNames är en Plant, men varje objekt kan vara exempelvis en Palm, eller Cactus
         Plant[] plantNames = {
-                new Palm("Laura", 5.0),
-                new Cactus("Igge", 0.20),
-                new Carnivorous("Meatloaf", 0.7),
-                new Palm("Olof", 1.0)
+                new Palm(Constants.LAURA_NAME, Constants.LAURA_HEIGHT),
+                new Cactus(Constants.IGGE_NAME, Constants.IGGE_HEIGHT),
+                new Carnivorous(Constants.MEATLOAF_NAME, Constants.MEATLOAF_HEIGHT),
+                new Palm(Constants.OLOF_NAME, Constants.OLOF_HEIGHT)
         };
 
         return plantNames;
@@ -43,7 +46,7 @@ class Main {
     }
 
 
-    public static void showPlant(Plant[] plantNames, String user) {
+    public static boolean showPlant(Plant[] plantNames, String user) {
 
         boolean found = false;
 
@@ -67,5 +70,6 @@ class Main {
             System.out.println("Du skrev inte något av namnen");
         }
 
+        return found;
     }
 }

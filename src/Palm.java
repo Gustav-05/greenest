@@ -1,6 +1,8 @@
 // Palm ärver egenskaper och metoder från Plant
 class Palm extends Plant {
 
+    private static final double TAP_WATER_PER_METER = 0.5;
+
     public Palm(String name, double height) {
         super(name, height);
     }
@@ -12,7 +14,7 @@ class Palm extends Plant {
 
     @Override
     public double calculateLiquid() {
-        return 0.5 * getHeight();
+        return TAP_WATER_PER_METER * getHeight();
     }
 
     @Override
